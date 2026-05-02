@@ -9,12 +9,12 @@ function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
-    { id: 1, image: '/hero.png', filter: 'grayscale(100%) contrast(1.1)', color: '#ff5e00', titleCode: 'VOID', subtitle: 'LO NUEVO. LO ESENCIAL.', titleSuffix: 'RUNNER', desc: 'Equípate con la última colección en blanco y negro pensada para maximizar el rendimiento urbano y redefinir cada truco en el concreto.' },
-    { id: 2, image: '/skateboards.png', filter: 'grayscale(100%) contrast(1.2) sepia(50%) hue-rotate(90deg)', color: '#ccff00', titleCode: 'NEON', subtitle: 'ESTILO. DURABILIDAD.', titleSuffix: 'DECK', desc: 'Arce de 7 capas con una estética vibrante que desafía las reglas tradicionales de lo estético en las rampas.' },
-    { id: 3, image: '/apparel.png', filter: 'grayscale(100%) contrast(1.1) sepia(30%) hue-rotate(180deg)', color: '#00f3ff', titleCode: 'CYBER', subtitle: 'EL AJUSTE PERFECTO.', titleSuffix: 'FIT', desc: 'Materiales inteligentes moldeados en color monocromático con destellos fríos para cualquier terreno.' },
-    { id: 4, image: '/accessories.png', filter: 'grayscale(100%) contrast(1.1) sepia(80%) hue-rotate(270deg)', color: '#ff00ff', titleCode: 'ULTRA', subtitle: 'AGARRE. CONTROL.', titleSuffix: 'GRIP', desc: 'Texturas anti-derrapantes que abrazan el asfalto. Tu seguridad en colores imposibles.' },
-    { id: 5, image: '/hero.png', filter: 'grayscale(50%) contrast(1.3) hue-rotate(45deg)', color: '#ffd700', titleCode: 'GOLD', subtitle: 'EDICIÓN LIMITADA.', titleSuffix: 'STREET', desc: 'El dorado representa el más alto rango. Accede a piezas de baja disponibilidad antes de que se agoten.' },
-    { id: 6, image: '/skateboards.png', filter: 'grayscale(100%) invert(10%) contrast(1.1)', color: '#ff3333', titleCode: 'DARK', subtitle: 'INNOVAR O MORIR.', titleSuffix: 'MATTER', desc: 'La oscuridad es solo la ausencia de lo preestablecido. Colección pesada para sesiones extremas.' }
+    { id: 1, filter: 'grayscale(100%) contrast(1.1)', color: '#ff5e00', titleCode: 'VOID', subtitle: 'LO NUEVO. LO ESENCIAL.', titleSuffix: 'RUNNER', desc: 'Equípate con la última colección en blanco y negro pensada para maximizar el rendimiento urbano y redefinir cada truco en el concreto.' },
+    { id: 2, filter: 'grayscale(100%) contrast(1.2) sepia(50%) hue-rotate(90deg)', color: '#ccff00', titleCode: 'NEON', subtitle: 'ESTILO. DURABILIDAD.', titleSuffix: 'DECK', desc: 'Arce de 7 capas con una estética vibrante que desafía las reglas tradicionales de lo estético en las rampas.' },
+    { id: 3, filter: 'grayscale(100%) contrast(1.1) sepia(30%) hue-rotate(180deg)', color: '#00f3ff', titleCode: 'CYBER', subtitle: 'EL AJUSTE PERFECTO.', titleSuffix: 'FIT', desc: 'Materiales inteligentes moldeados en color monocromático con destellos fríos para cualquier terreno.' },
+    { id: 4, filter: 'grayscale(100%) contrast(1.1) sepia(80%) hue-rotate(270deg)', color: '#ff00ff', titleCode: 'ULTRA', subtitle: 'AGARRE. CONTROL.', titleSuffix: 'GRIP', desc: 'Texturas anti-derrapantes que abrazan el asfalto. Tu seguridad en colores imposibles.' },
+    { id: 5, filter: 'grayscale(50%) contrast(1.3) hue-rotate(45deg)', color: '#ffd700', titleCode: 'GOLD', subtitle: 'EDICIÓN LIMITADA.', titleSuffix: 'STREET', desc: 'El dorado representa el más alto rango. Accede a piezas de baja disponibilidad antes de que se agoten.' },
+    { id: 6, filter: 'grayscale(100%) invert(10%) contrast(1.1)', color: '#ff3333', titleCode: 'DARK', subtitle: 'INNOVAR O MORIR.', titleSuffix: 'MATTER', desc: 'La oscuridad es solo la ausencia de lo preestablecido. Colección pesada para sesiones extremas.' }
   ];
 
   useEffect(() => {
@@ -54,7 +54,8 @@ function App() {
             style={{ opacity: index === currentSlide ? 1 : 0, transition: 'opacity 1s ease-in-out', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: index === currentSlide ? 1 : 0 }}
           >
             <div className="hero-nike-bg">
-              <img src={slide.image} alt={slide.titleCode} className="bw-image" style={{ filter: slide.filter }} />
+              {/* Sin imágenes por instrucción */}
+              <div style={{ width: '100%', height: '100%', backgroundColor: '#050505' }}></div>
             </div>
             <div className="hero-nike-content" style={{ position: 'absolute', bottom: '10%', left: '5%' }}>
               <p className="nike-subtitle">{slide.subtitle}</p>
@@ -88,8 +89,8 @@ function App() {
         
         <div className="nike-grid">
           <div className="nike-card">
-            <div className="nike-card-img-wrapper">
-              <img src="/apparel.png" alt="Apparel Collection" className="bw-image" />
+            <div className="nike-card-img-wrapper" style={{ background: '#111' }}>
+               {/* Sin imágenes por instrucción */}
             </div>
             <div className="nike-card-info">
               <h3>Ropa de Alto Rendimiento <span className="neon-arrow">→</span></h3>
@@ -98,8 +99,8 @@ function App() {
           </div>
           
           <div className="nike-card center-card">
-            <div className="nike-card-img-wrapper">
-              <img src="/skateboards.png" alt="Skateboards Collection" className="bw-image" />
+            <div className="nike-card-img-wrapper" style={{ background: '#111' }}>
+               {/* Sin imágenes por instrucción */}
             </div>
             <div className="nike-card-info">
               <h3>Tablas Profesionales <span className="neon-arrow">→</span></h3>
@@ -108,8 +109,8 @@ function App() {
           </div>
 
           <div className="nike-card">
-            <div className="nike-card-img-wrapper">
-              <img src="/accessories.png" alt="Accessories" className="bw-image" />
+            <div className="nike-card-img-wrapper" style={{ background: '#111' }}>
+               {/* Sin imágenes por instrucción */}
             </div>
             <div className="nike-card-info">
               <h3>Accesorios y Lijas <span className="neon-arrow">→</span></h3>
@@ -136,3 +137,4 @@ function App() {
 }
 
 export default App;
+
